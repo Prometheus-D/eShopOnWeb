@@ -11,6 +11,10 @@ env:
   SUBSCRIPTION-ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
   WEBAPP-NAME: eshoponweb-webapp-boom
 
+permissions:
+  id-token: write   # Verplicht om het OIDC token op te vragen bij GitHub!
+  contents: read
+
 jobs:
   #Build, test and publish .net web project in repository
   buildandtest:
